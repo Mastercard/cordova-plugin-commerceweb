@@ -22,20 +22,22 @@ and  Mastercard's web-based SRC-Initiator. `commerce-web`
 facilitates the initiation of the checkout experience and returns the 
 transaction result to the Merchant after completion.
 
-The cordova plugin provides a wrapper around our App2Web SDKS - `commerce-web-android` SDK for Android and `MCSCommerceWeb` for iOS Mobile platform.
-We recommend Merchant partnerts to use our cordova plugin only on Hybrid Mobile applications built using Apache Cordova framework. If you are fully native application, we recommend directly integrating our App2Web SDKs.
+The cordova plugin provides a wrapper around our <b>App2Web</b> SDKS - `commerce-web-android` for Android and `MCSCommerceWeb` for iOS Mobile platform.
+We recommend Merchants to use our Cordova plugin only on Hybrid Mobile applications built using Apache Cordova framework. If you are building a full native application, we recommend directly integrating to our App2Web SDKs.
 
 More information on App2Web SDKs can be found on the links below:
+
 Link to `commerce-web-android`: https://github.com/Mastercard/commerce-web-android
+
 Link to `MCSCommerceWeb` for iOS: https://github.com/Mastercard/MCSCommerceWeb
 
 ### <a name="onboarding">Onboarding</a>
 Merchants looking to integrate our cordova plugin must complete the onboarding steps on Mastercard Developer Portal.
 
 Steps for Merchant Onboarding:
-1. Create an account on [**Mastercard Developer Portal**](https://developer.mastercard.com/)
-2. Select "New Masterpass Project" and follow the steps to setup Merchant configuration.
-3. Once the project is setup, Merchant will be taken to the Project's dashboard. This page will help configure `checkoutId` for Sandbox/Prod environments along with `callbackUrl` etc.
+1. Create an account on [**Mastercard Developer Portal**](https://developer.mastercard.com/click-to-pay/documentation/onboarding/)
+and follow the steps to create New "Click to Pay API" project.
+2. Once the project is setup, Merchant will be taken to the Project's dashboard. This page will help configure `checkoutId` for Sandbox/Prod environments along with `callbackUrl` etc.
 
 It is very important to configure these values properly on the portal. If these values are not
 configured in proper format, merchant application will not be able to do successful checkout.
