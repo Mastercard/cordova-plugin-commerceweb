@@ -4,6 +4,7 @@
 ### Table of Contents
 
 - [Overview](#overview)
+- [Merchant Onboarding](#onboarding)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Initialization](#initialization)
@@ -20,6 +21,39 @@ This Cordova plugin enables to use  `commerce-web` SDK in a Cordova project. `co
 and  Mastercard's web-based SRC-Initiator. `commerce-web` 
 facilitates the initiation of the checkout experience and returns the 
 transaction result to the Merchant after completion.
+
+The cordova plugin provides a wrapper around our <b>App2Web</b> SDKS - `commerce-web-android` for Android and `MCSCommerceWeb` for iOS Mobile platform.
+We recommend Merchants to use our Cordova plugin only on Hybrid Mobile applications built using Apache Cordova framework. If you are building a full native application, we recommend directly integrating to our App2Web SDKs.
+
+More information on App2Web SDKs can be found on the links below:
+
+Link to `commerce-web-android`: https://github.com/Mastercard/commerce-web-android
+
+Link to `MCSCommerceWeb` for iOS: https://github.com/Mastercard/MCSCommerceWeb
+
+### <a name="onboarding">Onboarding</a>
+Merchants looking to integrate our cordova plugin must complete the onboarding steps on Mastercard Developer Portal.
+
+Steps for Merchant Onboarding:
+1. Create an account on [**Mastercard Developer Portal**](https://developer.mastercard.com/click-to-pay/documentation/onboarding/)
+and follow the steps to create New "Click to Pay API" project.
+2. Once the project is setup, Merchant will be taken to the Project's dashboard. This page will help configure `checkoutId` for Sandbox/Prod environments along with `callbackUrl` etc.
+
+It is very important to configure these values properly on the portal. If these values are not
+configured in proper format, merchant application will not be able to do successful checkout.
+
+#### Android:
+`callbackUrl` must be configured with an `Intent` URI. Below is an example format of `callbackUrl` for a sample merchant application named *FancyShop*
+* `Example format of callbackUrl`: intent://{$host}}/#Intent;scheme={$scheme};package={$package_name};end
+* `Channel`: Android
+
+### iOS:
+`callbackUrl` must be configured as URL Schemes. Below is an example format of callbackUrl for a sample iOS merchant application named FancyShop
+
+Example format of callbackUrl: fancyshop://
+Channel: IOS
+
+4. The above steps completes onboarding procedure and now the Merchant App can begin cordova plugin installation.
 
 ### <a name="installation">Installation</a>
 
@@ -194,7 +228,7 @@ After SDK initialization you can call `checkout` with a `CheckoutRequest` model,
 ```
 
 
-### <a name="checkout-button">Checkout Button Image</a>
+### <a name="checkout-button">Checkout Button</a>
 
 Merchant can obtain our checkout button image calling the `getCheckoutButton` by passing a `checkoutRequest` model and listening for the callback `getCheckoutButtonSuccess`
 
@@ -246,7 +280,7 @@ The result of a transaction is returned to the application via an `Intent` conta
 `callbackUrl` must be configured with an `Intent` URI. The transaction result is returned to the activity configured to receive the `Intent`. 
 would define a URI similar to
 
-`intent://{YOUR-SCHEME}/#Intent;package=com.package.{YOUR-SCHEME};scheme={YOUR-SCHEME};end`
+`intent://{YOUR-HOST}/#Intent;package={YOUR-PACKAGE};scheme={YOUR-SCHEME};end`
 
 In order to receive the result, the application must declare an `intent-filter` for the `Activity` receiving the `Intent`, the plugin already adds for you the intent filter, you only need to replace your scheme in the application `AndroidManifest.xml`
 
