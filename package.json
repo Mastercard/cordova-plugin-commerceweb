@@ -1,6 +1,6 @@
 {
   "name": "mastercard-cordova-commerceweb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This Cordova plugin enables to use  `commerce-web` sdk in a Cordova project. `commerce-web` is a lightweight library used to integrate Merchants with [**EMV Secure Remote Commerce**](https://www.emvco.com/emv-technologies/src/) and  Mastercard's web-based SRC-Initiator. `commerce-web` facilitates the initiation of the checkout experience and returns the transaction result to the Merchant after completion.",
   "cordova": {
     "id": "mastercard-cordova-commerceweb",
