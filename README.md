@@ -53,7 +53,7 @@ configured in proper format, merchant application will not be able to do success
 Example format of callbackUrl: fancyshop://
 Channel: IOS
 
-4. The above steps completes onboarding procedure and now the Merchant App can begin cordova plugin installation.
+3. The above steps completes onboarding procedure and now the Merchant App can begin cordova plugin installation.
 
 ### <a name="installation">Installation</a>
 
